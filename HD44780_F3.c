@@ -373,7 +373,7 @@ void HD44780_Init(void) {
 	GPIO_InitStructure.Pin = HD44780_DATABIT7 | HD44780_DATABIT6
 			| HD44780_DATABIT5 | HD44780_DATABIT4;
 	GPIO_InitStructure.Mode = GPIO_MODE_OUTPUT_PP;
-	GPIO_InitStructure.Pull = GPIO_PULLDOWN;
+	GPIO_InitStructure.Pull = GPIO_PULLUP;
 	GPIO_InitStructure.Speed = GPIO_SPEED_HIGH;
 
 	HAL_GPIO_Init(HD44780_DATAPORT, &GPIO_InitStructure);

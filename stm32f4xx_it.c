@@ -42,10 +42,19 @@
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
 
+extern int Weight_Ready;
+extern int32_t live_weight;
+extern int weight_read_flag;
+extern int time_read_flag;
+extern int Key_Scanning;
+int Key_Count = 0;
+extern int Start_interrupt_based_Delay;
+extern int start_Delay;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN PFP */
+extern int32_t Read_weight (void);
 
 /* USER CODE END PFP */
 
@@ -183,11 +192,55 @@ void PendSV_Handler(void)
 void SysTick_Handler(void)
 {
   /* USER CODE BEGIN SysTick_IRQn 0 */
+static  int32_t Wcounter = 0;
+static  int32_t Tcounter = 0;
+static  int32_t Kcounter = 0;
+static  int32_t Delay_counter = 0;
 
   /* USER CODE END SysTick_IRQn 0 */
   HAL_IncTick();
   /* USER CODE BEGIN SysTick_IRQn 1 */
+  if (Weight_Ready == 1)
+  {
+	  Wcounter ++;
+	  Tcounter ++;
+	  Kcounter ++;
+	  if (Wcounter == 200)
+	  {
+		  weight_read_flag = 1;
+		  Wcounter = 0;
 
+	  }
+	  if (Tcounter == 500)
+	  {
+		  time_read_flag = 1;
+		  Tcounter = 0;
+	  }
+	  if (Kcounter == 50)
+	  {
+		  Key_Scanning = 1;
+		  Kcounter = 0;
+	  }
+  }
+
+  if (start_Delay == 1)
+  {
+	  Delay_counter++;
+	  if (Delay_counter == 2000)
+	  {
+		  Start_interrupt_based_Delay = 1;
+		  Delay_counter = 0;
+	  }
+  }
+//  if (Weight_Ready == 1)
+//  {
+//	  Key_Count++;
+//	  if (Key_Count == 200)
+//	  {
+//		  Key_Count = 0;
+//		  live_weight = Read_weight();
+//	  }
+//  }
   /* USER CODE END SysTick_IRQn 1 */
 }
 
