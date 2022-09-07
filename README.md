@@ -27,7 +27,7 @@ Website:
 A system is required to update the dispensing parameters remotely, so a website was designed for this application through which the user can enter new or updated dispensing parameters. 
 The website was created using python and Django frameworks and was hosted locally for demonstration purposes.  
 The website is connected to the live MongoDB database, where the dispensing parameters entered by the user are automatically updated when the submit button is pressed on the website.
-For Code Visit: - 
+For Code Visit: - https://github.com/pranav3012/Pet-Food-Dispenser-Website
 ![This is an image](https://github.com/pranav3012/Smart-Pet-Food-Dispenser/blob/main/WS.png?raw=true)
  
 
