@@ -12,6 +12,7 @@ As a capstone project, I decided to develop something interesting, a consumer pr
 A smart pet food dispenser is a consumer product targeting busy pet owners. Being a pet parent necessitates accountability. Taking care of your pet on top of work, personal tasks and family time is a demanding task. Smart Pet food Feeders raise the bar. It allows pet owners to check on their pets and feed them at work or on vacation. The Smart Pet Food Dispensing System was designed to dispense pet food when we cannot accurately. The device also allows the user to customize the feeding time and portion for the pet. The system is constructed so that the feeder may be controlled by a computer or a mobile device. It is a standalone device that can be powered by an external 5V power supply or 5V batteries. 
 Methodology 
 The project consists of three main components. First is the embedded system, which handles all the dispensing actions. Second, the website or webpage is responsible for getting the pet owner's data, like dispensing time and the amount of food to be dispensed. These dispensing parameters are also automatically updated in the database. And the third component is RaspberryPI which gets the data from the database and updates the embedded system with the dispensing parameters. 
+![This is an image](https://drive.google.com/file/d/1uKgjvl68bx2e_au3DSbKOQlvGWThZL7w/view?usp=sharing/BD.png)
  
 
 Embedded System:  
